@@ -2,296 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="TE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hospital website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-<style>
-      .dropdown-container {
-        position: relative;
-        display: inline-block;
-        margin-top: 20px;
-
-    }
-
-  .dropbtn {
-    background-color: var(--green); /* Change to your preferred color */
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #23b79a; /* Change to your preferred hover color */
-}
-
-.dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown.active .dropdown-content {
-    display: block;
-}
-
-.btn1{
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border:var(--border);
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    color:var(--green);
-    cursor: pointer;
-    font-size: 1.7rem;
-    background: #fff;
-}
-
-
-</style>
+    <title>Doctor Registration</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i>MEDI CARE</a> 
-    <nav class="navbar">
-        <a href="index.php#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="medicine.php">Medicine</a>
-        <a href="doctor.php">Doctors</a>
-        <a href="location.php">Locations</a>
-        <a href="blood2.php" class="btn1"> Login </a>
-    </nav>
-    <div id="menu-btn" class="fas fa-bars"></div>
-</header>
-<section class="home" id="home">
- 
-    <div class="image">
-        <img src="image/about-img.svg" alt="">
-    </div>
+    <div class="container">
+        <h1>Register as Doctor</h1>
+        <button id="registerButton">Register as Doctor</button>
+<div id="formContainer" class="hidden">
+   <form action="register.php" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-    <div class="content">
-        <h3>we take care of your healthy life</h3>
-        <p id="typing-animation">We are here 24/7 for your help...</p>
-        <a href="contact.html" class="btn">Emergency Contact <span class="fas fa-chevron-right"></span></a>
-    </div>
+    <label for="degree">Degree:</label>
+    <input type="text" id="degree" name="degree" required>
 
-</section>
-<section class="icons-container">
+    <label for="medical">Medical Where Seated:</label>
+    <input type="text" id="medical" name="medical" required>
 
-    <div class="icons">
-        <i class="fas fa-user-md"></i>
-        <h3>150+</h3>
-        <p>doctors at work</p>
-    </div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-    <div class="icons">
-        <i class="fas fa-users"></i>
-        <h3>1030+</h3>
-        <p>satisfied patients</p>
-    </div>
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="Gastro liver">Gastro liver</option>
+                    <option value="Child specialist">Child specialist</option>
+                    <option value="Cardiac Surgery">Cardiac Surgery</option>
+                    <option value="Thoracic Surgery">Thoracic Surgery</option>
+                    <option value="Chest & Esophageal Surgeon">Chest & Esophageal Surgeon</option>
+                    <option value="Rheumatism specialist">Rheumatism specialist</option>
+                    <option value="Chest (Lung) & Esophageal Specialist">Chest (Lung) & Esophageal Specialist</option>
+                    <option value="Mother & Child Disease">Mother & Child Disease</option>
+                    <option value="Pedodontics">Pedodontics</option>
+                    <option value="Prosthodontics">Prosthodontics</option>
+                    <option value="Orthodontics">Orthodontics</option>
+                    <option value="Oral & Maxilofacial Surgery">Oral & Maxilofacial Surgery</option>
+                    <option value="Conservative Dentistry">Conservative Dentistry</option>
+                    <option value="Hepatology">Hepatology</option>
+                    <option value="Family medicine">Family medicine</option>
+                    <option value="Drug addiction">Drug addiction</option>
+                    <option value="Psychiatrist">Psychiatrist</option>
+                    <option value="Physical Medicine and Rehabilitation">Physical Medicine and Rehabilitation</option>
+                    <option value="Specialist/Physiatrist">Specialist/Physiatrist</option>
+                    <option value="Skin Specialist">Skin Specialist</option>
+                    <option value="Paralysis">Paralysis</option>
+                    <option value="Arthritis Pain">Arthritis Pain</option>
+                    <option value="Venereology">Venereology</option>
+                    <option value="Diabetes">Diabetes</option>
+                    <option value="Sonologist">Sonologist</option>
+                    <option value="Radiotherapist">Radiotherapist</option>
+                    <option value="Oral & Dental Surgery">Oral & Dental Surgery</option>
+                    <option value="Endoscopist">Endoscopist</option>
+                    <option value="Orthopedic Surgery">Orthopedic Surgery</option>
+                    <option value="Laparoscopic Surgery">Laparoscopic Surgery</option>
+                    <option value="Nutritionist">Nutritionist</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Rehabilitation Medicine">Rehabilitation Medicine</option>
+                    <option value="Orthopedician">Orthopedician</option>
+                    <option value="Nephrology">Nephrology</option>
+                    <option value="Oncology">Oncology</option>
+                    <option value="Pediatric Endocrinology">Pediatric Endocrinology</option>
+                    <option value="Cytopathology">Cytopathology</option>
+                    <option value="Hepatopancreatobiliary Surgery">Hepatopancreatobiliary Surgery</option>
+                    <option value="Neuro Medicine">Neuro Medicine</option>
+                    <option value="Neuro Surgeon">Neuro Surgeon</option>
+    </select>
 
-    <div class="icons">
-        <i class="fas fa-pills"></i>
-        <h3>490+</h3>
-        <p>Medicine info</p>
-    </div>
+    <label for="image">Profile Picture:</label>
+    <input type="file" id="image" name="image" accept="image/*" required>
 
-    <div class="icons">
-        <i class="fas fa-hospital"></i>
-        <h3>70+</h3>
-        <p>available hospitals</p>
-    </div>
+    <label for="daySelector">Day Selector:</label>
+    <select id="daySelector">
+        <option value="Sat">Saturday</option>
+        <option value="Sun">Sunday</option>
+        <option value="Mon">Monday</option>
+        <option value="Tue">Tuesday</option>
+        <option value="Wed">Wednesday</option>
+        <option value="Thu">Thursday</option>
+        <option value="Fri">Friday</option>
+    </select>
+    <button type="button" id="addDayButton">Add Day</button>
 
-</section>
+    <div id="selectedDaysDisplay"></div>
+    <input type="hidden" id="visiting_days" name="visiting_days">
 
-<section class="services" id="services">
+    <label for="visiting_time">Visiting Time:</label>
+    <input type="text" id="visiting_time" name="visiting_time" placeholder="e.g., 7:30 PM - 9:30 PM" required>
 
-    <h1 class="heading"> our <span>services</span> </h1>
+    <button type="submit">Submit</button>
+</form>
 
-    <div class="box-container">
+</div>
 
-        <div class="box">
-            <i class="fas fa-notes-medical"></i>
-            <h3>free checkups</h3>
-    <p>Receive complimentary health checkups to ensure your well-being and early detection of potential issues.</p>
-            <a href="freecheckup.php" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-ambulance"></i>
-            <h3>24/7 ambulance</h3>
-    <p>Our ambulance service is available, providing emergency medical assistance whenever you need it.</p>
-            <a href="contact.php" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-user-md"></i>
-            <h3>expert doctors</h3>
-    <p>Consult with our team of highly qualified and experienced doctors who are experts in their respective fields.</p>
-            <a href="doctor.php" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-pills"></i>
-            <h3>medicines</h3>
-    <p>We offer a wide range of medications, ensuring you have access to the treatments you need.</p>
-            <a href="medicine.php" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-phone"></i>
-            <h3>Emergency contact</h3>
-    <p>In case of an emergency, reach out to us immediately through our dedicated emergency contact lines.</p>
-            <a href="contact.php" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-droplet"></i>
-            <h3>Blood Info</h3>
-    <p>Access vital information about blood donations, types, and availability to support life-saving efforts.</p>
-            <a href="blood2.php" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
 
     </div>
 
-</section>
-<section class="about" id="about">
-
-    <h1 class="heading"> <span>about</span> us </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/home-img.svg" alt="">
-        </div>
-
-        <div class="content">
-            <h3>take the world's best quality treatment</h3>
-            <p>This website has been meticulously designed and developed by Masum Billah and Tasnim Fairoze Oishy, bringing together their expertise and passion for creating an exceptional online experience.</p>
-    <p>We are dedicated to providing high-quality content and services, ensuring that every visitor receives the best possible experience. Thank you for visiting our site.</p>
-        </div>
-
-    </div>
-
-</section>
-<section class="appointment" id="appointment">
-
-    <h1 class="heading"> <span>appoint</span> now </h1>    
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/appointment-img.svg" alt="">
-        </div>
-
-        <form action="connection.php" method="post">
-
-            <h3>make appointment</h3>
-            <div class="dropdown">
-                <button type="button" class="dropbtn">Appoint</button>
-                <div class="dropdown-content">
-                    <a href="signup.php">Sign Up</a>
-                    <a href="login.php">Login</a>
-                </div>
-            </div>
-        </form>
-
-    </div>
-
-</section>
-
-
-<section class="footer">
-
-    <div class="box-container">
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#home"> <i class="fas fa-chevron-right"></i> home </a>
-            <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
-            <a href="#services"> <i class="fas fa-chevron-right"></i> services </a>
-            <a href="#doctors"> <i class="fas fa-chevron-right"></i> doctors </a>
-            <a href="#appointment"> <i class="fas fa-chevron-right"></i> appointment </a>
-            <a href="medicine.html"> <i class="fas fa-chevron-right"></i> Medicine </a>
-        </div>
-
-        <div class="box">
-            <h3>our services</h3>
-            <a href="contact.html"> <i class="fas fa-chevron-right"></i> Ambulance </a>
-            <a href="medicine.html"> <i class="fas fa-chevron-right"></i> Medicine Info </a>
-            <a href="freecheckup.html"> <i class="fas fa-chevron-right"></i> Offer's in Diffenrent Hospital </a>
-        </div>
-
-        <div class="box">
-            <h3>appointment info</h3>
-            <a href="#"> <i class="fas fa-phone"></i> +8801688238801 </a>
-            <a href="#"> <i class="fas fa-phone"></i> +8801782546978 </a>
-            <a href="#"> <i class="fas fa-envelope"></i> Medicare@gmail.com</a>
-            <a href="#"> <i class="fas fa-envelope"></i> Medicare2@gmail.com </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh </a>
-        </div>
-
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#"> <i class="fab fa-faceappointment-f"></i> faceappointment </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
-        </div>
-
-    </div>
-
-    <div class="credit"> created by <span>SpiderScript</span> | all rights reserved </div>
-
-</section>
-
-
-<script src="script.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdown = document.querySelector('.dropdown');
-
-    dropbtn.addEventListener('click', function(event) {
-        event.stopPropagation(); // Stop event from bubbling up
-        dropdown.classList.toggle('active');
+    <script>
+    document.getElementById('registerButton').addEventListener('click', () => {
+        document.getElementById('formContainer').classList.toggle('hidden');
     });
+</script>
+<script>
+    const selectedDays = new Set(); // Use a Set to avoid duplicate days
+    const daySelector = document.getElementById('daySelector');
+    const addDayButton = document.getElementById('addDayButton');
+    const selectedDaysDisplay = document.getElementById('selectedDaysDisplay');
+    const visitingDaysInput = document.getElementById('visiting_days');
 
-    // Close the dropdown if the user clicks outside of it
-    document.addEventListener('click', function(event) {
-        if (!dropdown.contains(event.target)) {
-            dropdown.classList.remove('active');
+    addDayButton.addEventListener('click', () => {
+        const selectedDay = daySelector.value;
+        if (!selectedDays.has(selectedDay)) {
+            selectedDays.add(selectedDay);
+
+            // Update the display
+            selectedDaysDisplay.innerHTML = Array.from(selectedDays)
+                .map(day => `<span>${day}</span>`)
+                .join(', ');
+
+            // Update the hidden input
+            visitingDaysInput.value = Array.from(selectedDays).join(',');
         }
     });
-});
 </script>
+
+
+    </script>
 </body>
 </html>
